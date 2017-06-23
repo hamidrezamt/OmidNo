@@ -3,50 +3,105 @@
 <head>
     <title>inbox</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript">
-</script>
-    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript">
-</script>
-    <script type="text/javascript" src="javascript.js">
-</script><!-- Load Bootstrap RTL theme from RawGit -->
-    <link rel="stylesheet" href="bootstrap-rtl-master/dist/css/bootstrap-rtl.css" type="text/css">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-    <script src="https://use.fontawesome.com/5881fd899f.js"></script>
-    <script>
-				function hider(){ 
-					if(document.getElementById("checkbox").checked ==false)
-					{
-						document.getElementById("email").style.display = "none";
-						document.getElementById("phone").style.display = "none";
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript">
+	</script>
+	<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript">
+	</script>
+	<script type="text/javascript" src="javascript.js">
+	</script><!-- Load Bootstrap RTL theme from RawGit -->
+	<link rel="stylesheet" href="bootstrap-rtl-master/dist/css/bootstrap-rtl.css" type="text/css">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<script src="https://use.fontawesome.com/5881fd899f.js"></script>
+	<script>
+		function hider(){
+			if(document.getElementById("checkbox").checked ==false)
+			{
+				document.getElementById("divselector").style.display = "none";
+			}
+			else{
+				document.getElementById("divselector").style.display = "block";
+			}
+		}
+		function shower(){
+			if (document.getElementById("selector").value == "سایر")
+			{
+				document.getElementById("other_faculty").style.display = "block";
+			}
+			else{
+				document.getElementById("other_faculty").style.display = "none";
+			}
+		}
+		function radioHider(){
+			if(document.getElementById("radioid").value =="استاد شهید بهشتی هستم")
+			{
+				document.getElementById("divselector2").style.display = "block";
+			}
+			else{
+				document.getElementById("divselector2").style.display = "none";
+			}
+		}
+		function mangePanles(id){
+			var ids=["collapseOne","collapseTwo","collapseThree"];
 
+			if(document.getElementById(id).style.display=="none"){
+				for (var i=0; i<ids.length;i++){
+					if (ids[i]!=id){
+						alert('closing prob'+ids[i])
+						document.getElementById(ids[i]).style.display="none"
 					}
-					else{
-						document.getElementById("email").style.display = "block";
-						document.getElementById("phone").style.display = "block";
-					}
-					
-						
 				}
-				function sendmessage()
-				{
-					document.getElementById("sendmsg").innerHTML="sdhjfvkjhw";
-				}
-				
+				document.getElementById(id).style.display="block"; // show the icons
+			}
+			else{
+				alert('in else')
+				document.getElementById(id).style.display="none";
+			}
+			/*var bool=true;
+			 var index=-1;
+			 //alert(String(id))
+			 if(document.getElementById(id).style.display=="none"){
+			 for (var i=0; i<ids.length;i++){
+			 //alert(String(i))
+			 if (ids[i]!=id){
+			 //alert(String(i))
+			 if (document.getElementById(ids[i]).style.display=="block"){
+			 index=i;
+			 }
+			 }
+			 }
+			 if (index!=-1)
+			 document.getElementById(ids[index]).style.display="none";
+			 document.getElementById(id).style.display="block"; // show the icons
+			 }
+			 else{
+			 document.getElementById(id).style.display="none";
+			 }*/
+		}
 	</script>
 	<style>
-		@font-face {
-	    font-family: Gulf;
-	    src: url(fonts/Gulf-regular.ttf);
+		.accordion-heading {
+			background-color: #f2f2f2;
+			min-height: 40px;
+			border-radius: 4px;
+			padding: 10px;
+			margin-bottom: 15px;
+			font-family: Gulf-semibold;
+			font-size: 17px;
 		}
 		@font-face {
-	    font-family: Gulf-semibold;
-	    src: url(fonts/Gulf-semibold.ttf);
+			font-family: Gulf;
+			src: url(fonts/Gulf-regular.ttf);
 		}
+		@font-face {
+			font-family: Gulf-semibold;
+			src: url(fonts/Gulf-semibold.ttf);
+		}
+
 	</style>
-    
+
 </head>
 <body>
 <div class="container" style="min-height: 10px">
@@ -114,7 +169,6 @@
 <div class="container" style="font-family: Gulf;">
     <h4 style="margin-bottom: 15px;">فرم ارسال پیام </h4>
     <p id="demo"></p>
-</div>>
 
 
     <div class="container" >
@@ -314,6 +368,7 @@
                     <p style="font-size: 16px; font-family: Gulf-semibold;">حقوق قانونی وب‌سایت</p><p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
                 </div>
         </div>
+</div>
 </div>
 </body>
 </html>
