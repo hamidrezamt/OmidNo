@@ -16,14 +16,14 @@
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 	<script src="https://use.fontawesome.com/5881fd899f.js"></script>
 	<script>
-		function hider(){
+		function hider(){ 
 			if(document.getElementById("checkbox").checked ==false)
 			{
-				document.getElementById("divselector").style.display = "none";
+				document.getElementById("stNumber").style.display = "none";
 			}
 			else{
-				document.getElementById("divselector").style.display = "block";
-			}
+				document.getElementById("stNumber").style.display = "block";
+			}	
 		}
 		function shower(){
 			if (document.getElementById("selector").value == "سایر")
@@ -33,52 +33,6 @@
 			else{
 				document.getElementById("other_faculty").style.display = "none";
 			}
-		}
-		function radioHider(){
-			if(document.getElementById("radioid").value =="استاد شهید بهشتی هستم")
-			{
-				document.getElementById("divselector2").style.display = "block";
-			}
-			else{
-				document.getElementById("divselector2").style.display = "none";
-			}
-		}
-		function mangePanles(id){
-			var ids=["collapseOne","collapseTwo","collapseThree"];
-
-			if(document.getElementById(id).style.display=="none"){
-				for (var i=0; i<ids.length;i++){
-					if (ids[i]!=id){
-						alert('closing prob'+ids[i])
-						document.getElementById(ids[i]).style.display="none"
-					}
-				}
-				document.getElementById(id).style.display="block"; // show the icons
-			}
-			else{
-				alert('in else')
-				document.getElementById(id).style.display="none";
-			}
-			/*var bool=true;
-			 var index=-1;
-			 //alert(String(id))
-			 if(document.getElementById(id).style.display=="none"){
-			 for (var i=0; i<ids.length;i++){
-			 //alert(String(i))
-			 if (ids[i]!=id){
-			 //alert(String(i))
-			 if (document.getElementById(ids[i]).style.display=="block"){
-			 index=i;
-			 }
-			 }
-			 }
-			 if (index!=-1)
-			 document.getElementById(ids[index]).style.display="none";
-			 document.getElementById(id).style.display="block"; // show the icons
-			 }
-			 else{
-			 document.getElementById(id).style.display="none";
-			 }*/
 		}
 	</script>
 	<style>
